@@ -55,6 +55,45 @@ class Pirate {
         console.log(`${this.name} attacked you with his ${this.weapon}!`)
     }
 
-    pirateAction
+    pirateAction(pirateActionInput){
+        console.log(`Our pirate is ${pirateActionInput}`)
+    }
+
+    pirateIsArguing(pirateIsArguingInput){
+        console.log(`${this.parrotName} is screaming at ${this.name}`)
+    }
 
 }
+
+const jollyRoger = [
+    new Pirate ('Simon', 'Sword', 'Freddy'),
+    new Pirate ('Logan', 'Broken glass bottle', 'Canelo'),
+    new Pirate ('Joey', 'Wooden Leg', 'Lugo')
+]
+
+const blackPearl = [
+    new Pirate ('Jhonny', 'Rotten fish', 'Silly'),
+    new Pirate ('Paul', 'Branch', 'Sully'),
+    new Pirate ('Jackie', 'Gun', 'Luna')
+];
+
+function piratesProperties(piratesArrays){
+    piratesArrays.forEach(pirate => {
+        console.log(`
+        CREW MEMBER:
+        `)
+        console.log(`Pirate Name: ${pirate.name}` )
+        console.log(`Pirate Weapon: ${pirate.weapon}` )
+        console.log(`Pet Name: ${pirate.parrotName}
+        ` )
+        pirate.attack()
+        pirate.pirateAction(`Ready!`)
+        pirate.pirateIsArguing()
+    });
+}
+
+console.log(`Crew abord: Jolly Roger`)
+piratesProperties(jollyRoger)
+
+console.log(`Crew abord: Black Pearl`)
+piratesProperties(blackPearl)
